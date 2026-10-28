@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: estoque
+      POSTGRES_PASSWORD: estoque_local
+      POSTGRES_DB: estoque
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - estoque_data:/var/lib/postgresql/data
+volumes:
+  estoque_data:
